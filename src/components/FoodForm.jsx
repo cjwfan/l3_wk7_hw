@@ -15,8 +15,6 @@ export default function FoodForm({
 }) {
   return (
     <>
-      <h1>Cat Food Tracker</h1>
-
       <form onSubmit={handleSubmit}>
         <label>
           Food Name:
@@ -58,7 +56,6 @@ export default function FoodForm({
           />
           <button type="submit">Add Food</button>
         </label>
-        <p>Mia is typing: {foodType}</p>
       </form>
     </>
   );

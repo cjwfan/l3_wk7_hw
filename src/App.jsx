@@ -4,6 +4,9 @@ import "./App.css";
 import { supabase } from "./supabase";
 import FoodList from "./components/FoodList";
 import FoodForm from "./components/FoodForm";
+import { Link, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import FoodsPage from "./pages/FoodsPage";
 
 function App() {
   const [catFoods, setCatFoods] = useState([]);
@@ -29,7 +32,7 @@ function App() {
       notes: notes,
     });
     await getFoods();
-    // use the tool to clear it
+
     setFoodName("");
     setBrand("");
     setFoodType("");
@@ -43,21 +46,33 @@ function App() {
 
   return (
     <>
-      {/* making definitions to pass the states. PropName on left, state value on right */}
-      <FoodForm
-        foodName={foodName}
-        setFoodName={setFoodName}
-        brand={brand}
-        setBrand={setBrand}
-        foodType={foodType}
-        setFoodType={setFoodType}
-        status={status}
-        setStatus={setStatus}
-        notes={notes}
-        setNotes={setNotes}
-        handleSubmit={handleSubmit}
-      />
-      <FoodList catFoods={catFoods} />
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/foods">View Foods</Link>
+      </nav>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              foodName={foodName}
+              setFoodName={setFoodName}
+              brand={brand}
+              setBrand={setBrand}
+              foodType={foodType}
+              setFoodType={setFoodType}
+              status={status}
+              setStatus={setStatus}
+              notes={notes}
+              setNotes={setNotes}
+              handleSubmit={handleSubmit}
+            />
+          }
+        />
+
+        <Route path="/foods" element={<FoodsPage catFoods={catFoods} />} />
+      </Routes>
     </>
   );
 }
