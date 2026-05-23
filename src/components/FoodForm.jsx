@@ -17,7 +17,7 @@ export default function FoodForm({
     <>
       <form onSubmit={handleSubmit}>
         <label>
-          Food Name:
+          Food Name (e.g., Chicken in gravy):
           <input
             type="text"
             value={foodName}
@@ -25,7 +25,7 @@ export default function FoodForm({
           />
         </label>
         <label>
-          Brand:
+          Brand (e.g., Fancy Feast):
           <input
             type="text"
             value={brand}
@@ -33,7 +33,7 @@ export default function FoodForm({
           />
         </label>
         <label>
-          Food Type:
+          Food Type (Wet, Dry, or Treat):
           <input
             type="text"
             value={foodType}
@@ -41,7 +41,7 @@ export default function FoodForm({
           />
         </label>
         <label>
-          Status:
+          Status (Liked, Disliked, or To-Try):
           <input
             type="text"
             value={status}
@@ -49,7 +49,7 @@ export default function FoodForm({
           />
         </label>
         <label>
-          Notes:
+          Notes (Reaction to Food):
           <textarea
             value={notes}
             onChange={(event) => setNotes(event.target.value)}

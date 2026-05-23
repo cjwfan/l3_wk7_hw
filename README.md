@@ -1,6 +1,6 @@
 # Cat Food Tracker
 
-Cat Food Tracker is a React app for tracking foods my cat liked, disliked, or still needs to try. The home page has a form for adding a food, and the saved foods page shows the records from Supabase.
+Cat Food Tracker is an app for tracking foods the user's cat liked, disliked, or still needs to try. The home page has a form for adding a food, and the saved foods page shows the records from Supabase.
 
 ## How to Run It
 
